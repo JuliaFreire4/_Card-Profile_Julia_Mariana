@@ -1,6 +1,10 @@
 :root{
-    --cor-background: #e9e2ec;
-    --cor-icons:#392D3E;
+    --cor-background: #F4F7FC;
+    --cor-icons:#102D5E;
+    --azul-claro:#A9C7F5;
+    --azul-medio: #2862B8;
+    --azul-marinho:#102D5E;
+
  }
 
 *{
@@ -26,25 +30,75 @@ body{
     align-items: center; 
     flex-direction: column;
     border-radius: 0.8rem;
+    position: relative;
+    overflow: hidden;
 
 }
 
 .card, .profile-image, .fab, .contact-me{
-    box-shadow: -0.1rem -0.1rem 0.3rem #fff, 0.1rem 0.1rem 0.3rem;
+    box-shadow: -0.1rem -0.1rem 0.3rem #0295ff1c, 0.1rem 0.1rem 0.3rem;
 }
 
+.profile-image,
+.title,
+.about,
+.social-icon,
+.contact-me {
+    position: relative;
+    z-index: 4;
+}
+.formas-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 115px;
+    height: 85px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.onda {
+    position: absolute;
+    bottom: 0;
+    left: -5px;
+    width: 100%;
+    height: 100%;
+}
+
+.onda-clara {
+    z-index: 1;
+    width: 115px;
+    height: 55px;
+    left: -20px;
+}
+
+.onda-escura {
+    z-index: 1;
+    width: 75px;
+    height: 40px;
+
+}
+
+.onda-azul {
+    z-index: 3;
+    width: 45px;
+    height: 25px;
+
+}
 .profile-image{
     height: 7rem;
     width: 7rem;
     display: flex;
     border-radius: 50%;
+    border-color: var(--azul-medio);
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
 }
 
 .title{
-    font-weight: 700;
+    font-weight:700;
     margin: 1rem 0;
 }
 
@@ -59,6 +113,7 @@ body{
     padding: 0.5rem;
     border-radius: 50%;
     text-align: center;
+    background-color: var(--azul-claro);
 }
 
 .img{
@@ -72,14 +127,19 @@ body{
 
 .contact-me{
     background: none;
+    background-color: var(--azul-marinho);
+    color: var(--cor-background);
     border: none;
     padding: 0.7rem;
     border-radius: 0.8rem;
     margin-top: 0.5rem;
+    z-index: 3;
 }
 
-.fab:hover{
-    box-shadow: inset -0.1rem -0.1rem 0.3rem #fff,
-    inset -0.1rem -0.1rem 0.3rem #868686;
+
+.contact-me:hover, .fab:hover, .profile-image:hover {
+    box-shadow:
+        0.1rem 0.1rem 0.3rem var(--azul-claro),
+        -0.1rem -0.1rem 0.3rem var(--azul-marinho);
     cursor: pointer;
 }
